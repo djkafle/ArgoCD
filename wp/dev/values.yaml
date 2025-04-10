@@ -1,9 +1,9 @@
 wp:
   name: wpapp
   labels:
-    app: wp
+    id: C0927678
+    app: wordpress
     env: dev
-    stack: wordpress
   image:
     repository: wordpress
     tag: latest
@@ -15,5 +15,8 @@ wp:
     WORDPRESS_DB_HOST: "wp-database.wpdb.svc.cluster.local"
     WORDPRESS_DB_NAME: "wordpress"
     WORDPRESS_DB_USER: "wordpress"
-  containerPorts:
-      http: 80
+    APP_ENV: dev
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 80

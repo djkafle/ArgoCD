@@ -26,4 +26,4 @@ spec:
               name: {{ .Values.wp.name }}-secret
               optional: false
         ports:
-        - containerPort: {{ .Values.wp.containerPorts.http }}
+        - containerPort: {{ .Values.wp.service.targetPort }}
